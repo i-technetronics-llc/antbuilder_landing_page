@@ -7,9 +7,9 @@ import Benefits from "../components/benefits";
 import Cta from "../components/cta";
 import { benefitOne, features } from "../components/data";
 import Faq from "../components/faq";
-import Footer from "../components/footer";
-import Video from "../components/video";
 import Features from "../components/Features";
+import Footer from "../components/footer";
+import PricingSection from "../components/PricingSection";
 
 //import dynamic from "next/dynamic";
 
@@ -48,6 +48,14 @@ export default function Home() {
         pretitle="Antbuilder Benefits"
         title="Unleash the Power of Iterative App Development with Antbuilder" />
       <Benefits data={benefitOne} />
+
+
+      <SectionTitle
+        title="Designed for business teams like yours" >
+        Here at Antbuilder, we have have the perfect pricing model for your business.
+      </SectionTitle>
+
+      <PricingSection />
 
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         We have compiled a list of commonly asked questions for you

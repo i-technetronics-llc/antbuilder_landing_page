@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
+  "name": "antbuilder-landing-page",
   "version": "0.1.0",
-  "description": "Nextly Landing Page Template",
+  "description": "Antbuilder Landing Page",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gituhb.com/web3templates/nextly-template"
+    "url": "#"
   },
   "keywords": [
     "nextjs",
     "tailwindcss",
-    "free"
+    "antbuilder"
   ],
-  "author": "Surjith S M",
+  "author": "Cypher Moon",
   "license": "ISC",
   "dependencies": {
     "@emotion/css": "^11.1.3",
