@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.svg";
 import { ArrowNarrowRightIcon, CheckCircleIcon } from "@heroicons/react/solid";
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -38,15 +39,15 @@ export default function Hero() {
 
 
 
-            <a
-              href="https://github.com/web3templates"
-              target="_blank"
-              rel="noopener"
-              className="px-8 py-3 text-lg font-medium text-center w-max inline-flex items-center text-white bg-blue-500 rounded-xl ">
-              Book a Session
+            <Link
+              href="/book_session"
+              passHref>
+              <a className="px-8 py-3 text-lg font-medium text-center w-max inline-flex items-center text-white bg-blue-500 rounded-xl ">
+                Book a Session
+                <ArrowNarrowRightIcon className="w-5 h-5 ml-3" />
+              </a>
 
-              <ArrowNarrowRightIcon className="w-5 h-5 ml-3" />
-            </a>
+            </Link>
 
           </div>
         </div>
