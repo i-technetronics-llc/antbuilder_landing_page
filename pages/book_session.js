@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import React from 'react';
 import * as Yup from 'yup';
+import { countries, industries, job_titles } from '../components/forms/data';
 import FormControl from '../components/forms/FormControl';
+import FormikAutoComplete from '../components/forms/FormikAutoComplete';
 import FormikInput from '../components/forms/FormikInput';
 import FormikTextarea from '../components/forms/FormikTextarea';
 import FormStep from '../components/forms/FormStep';
@@ -95,11 +97,11 @@ const BookSession = () => {
                     </FormControl>
 
                     <FormControl label="Industry" labelId="industry">
-                        <FormikInput type="text" name="industry" id="industry" className={inputClassName} />
+                        <FormikAutoComplete type="text" name="industry" id="industry" suggestions={industries} className={inputClassName} />
                     </FormControl>
 
                     <FormControl label="Country Region" labelId="region">
-                        <FormikInput type="text" name="region" id="region" className={inputClassName} />
+                        <FormikAutoComplete type="text" name="region" id="region" suggestions={countries} className={inputClassName} />
                     </FormControl>
 
                     <FormControl label="Employee Count" labelId="employee_count">
@@ -107,7 +109,7 @@ const BookSession = () => {
                     </FormControl>
 
                     <FormControl label="Job Title" labelId="job_title">
-                        <FormikInput type="text" name="job_title" id="job_title" className={inputClassName} />
+                        <FormikAutoComplete type="text" name="job_title" id="job_title" suggestions={job_titles} className={inputClassName} />
                     </FormControl>
 
                     <FormControl label="Budget for the Project" labelId="project_budget">

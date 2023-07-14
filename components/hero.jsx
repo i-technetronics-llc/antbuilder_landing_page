@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function Hero() {
   return (
     <>
-      <Container className="flex flex-wrap mb-20 mt-5 lg:mt-0">
+      <Container className="flex flex-wrap lg:mb-20 mt-5 lg:mt-0">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-xl mb-12 text-center lg:text-left">
             <h1 className="text-4xl font-bold leading-snug capitalize tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight dark:text-white">

@@ -1,3 +1,5 @@
+import { ArrowNarrowLeftIcon } from "@heroicons/react/outline"
+
 const FormNavigationButton = ({ hasPreviousStep, isLastStep, handlePreviousStep, isSubmitting }) => {
     return (
         <div className="flex items-center justify-end space-x-7 mt-8">
@@ -18,3 +20,5 @@ const FormNavigationButton = ({ hasPreviousStep, isLastStep, handlePreviousStep,
         </div>
     )
 }
+
+export default FormNavigationButton
