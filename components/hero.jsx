@@ -43,7 +43,7 @@ export default function Hero() {
               href="/book_session"
               passHref>
               <a className="px-8 py-3 text-lg font-medium text-center w-max inline-flex items-center text-white bg-blue-500 rounded-xl ">
-                Book a Session
+                Take the next step
                 <ArrowNarrowRightIcon className="w-5 h-5 ml-3" />
               </a>
 

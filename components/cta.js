@@ -1,6 +1,7 @@
 import { ArrowNarrowRightIcon } from "@heroicons/react/outline";
 import React from "react";
 import Container from "./container";
+import Link from "next/link"
 
 export default function Cta() {
   return (
@@ -15,13 +16,15 @@ export default function Cta() {
           </p>
         </div>
         <div className="flex-shrink-0 w-full text-center lg:w-auto">
-          <a
-            href="https://github.com/web3templates"
+          <Link
+            href="/book_session"
             target="_blank"
             rel="noopener"
-            className="py-3 mx-auto text-lg inline-flex items-center font-medium text-center bg-yellow-500 text-white px-7 lg:px-10 lg:py-5 rounded-lg">
-            Start Building <ArrowNarrowRightIcon className="w-5 h-5 ml-3" />
-          </a>
+          >
+            <a className="py-3 mx-auto text-lg inline-flex items-center font-medium text-center bg-yellow-500 text-white px-7 lg:px-10 lg:py-5 rounded-lg">
+              Get started now <ArrowNarrowRightIcon className="w-5 h-5 ml-3" />
+            </a>
+          </Link>
         </div>
       </div>
     </Container>
