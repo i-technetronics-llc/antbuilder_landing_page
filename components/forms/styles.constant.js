@@ -1,0 +1,1 @@
+export const inputClassName = 'bg-gray-100 text-base text-primary-700 py-3.5 px-3 rounded-lg outline-none focus:ring-1 focus:ring-gray-500';
