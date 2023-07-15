@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
-import { PopupModal, useCalendlyEventListener } from 'react-calendly';
+import React, { useState } from 'react';
 import * as Yup from 'yup';
-import EventDetails from '../components/EventDetails';
 import { countries, industries, job_titles } from '../components/forms/data';
 import FormControl from '../components/forms/FormControl';
 import FormikAutoComplete from '../components/forms/FormikAutoComplete';

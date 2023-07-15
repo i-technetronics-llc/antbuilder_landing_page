@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Millik;
+  src: url("/fonts/Millik.ttf") format('truetype'),
+        url("/fonts/Millik.otf") format('opentype');
+}
+@font-face {
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Regular.ttf") format('truetype');
+  font-weight: 400;
+}
+
+@font-face{
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Bold.ttf") format('truetype');
+  font-weight: 700;
+}
+
+
+@font-face{
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Light.ttf") format('truetype');
+  font-weight: 300;
+}
+
+@font-face{
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Thin.ttf") format('truetype');
+  font-weight: 100;
+}
+
+@font-face{
+  font-family: Moderat;
+  src: url("/fonts/Moderat-Medium.ttf") format('truetype');
+  font-weight: 500;
+}
+
+
+h1,h2,h3,h4,h5,h6 { font-family: Millik, serif ; }
+
+html{
+  font-family: Moderat, sans-serif ;
+}
+
+
+
 @layer base {
   html,
   body {
