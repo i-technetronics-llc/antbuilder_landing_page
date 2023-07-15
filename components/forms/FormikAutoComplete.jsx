@@ -6,6 +6,17 @@ const FormikAutoComplete = ({ type = "text", suggestions, placeholder, name, cla
     const [isOpen, setIsOpen] = useState(false)
     const menuRef = useRef(null)
 
+    const filteredSuggestions = suggestions.filter((suggestion) => {
+        let suggestionLowerCase = suggestion.toLowerCase()
+        let queryLowerCase = field.value.toLowerCase()
+
+        if (suggestionLowerCase === queryLowerCase) return false
+
+        return suggestionLowerCase.includes(queryLowerCase)
+    })
+
+    const isSuggestionsEmpty = filteredSuggestions.length === 0
+
     const openAutoComplete = () => {
         setIsOpen(true)
     }
@@ -55,16 +66,8 @@ const FormikAutoComplete = ({ type = "text", suggestions, placeholder, name, cla
 
                 {/* dropdown suggestions */}
                 <div
-                    className={`bg-gray-100 dark:bg-gray-600 shadow-md absolute top-full mt-1 rounded-lg left-0 w-full px-1 py-3 z-20 overflow-y-auto ${isOpen ? "block" : "hidden"}`}>
-                    {suggestions
-                        .filter((suggestion) => {
-                            let suggestionLowerCase = suggestion.toLowerCase()
-                            let queryLowerCase = field.value.toLowerCase()
-
-                            if (suggestionLowerCase === queryLowerCase) return false
-
-                            return suggestionLowerCase.includes(queryLowerCase)
-                        })
+                    className={`bg-gray-100 dark:bg-gray-600 shadow-md absolute top-full mt-1 rounded-lg left-0 w-full px-1 py-3 z-20 overflow-y-auto ${isOpen && !isSuggestionsEmpty ? "block" : "hidden"}`}>
+                    {filteredSuggestions
                         .slice(0, 10)
                         .map((suggestion, idx) => {
                             return (
