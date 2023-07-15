@@ -4,7 +4,7 @@ const FormNavigationButton = ({ hasPreviousStep, isLastStep, handlePreviousStep,
     return (
         <div className="flex items-center justify-end space-x-7 mt-8">
             {hasPreviousStep && (
-                <button className="text-gray-800 dark:text-gray-200 text-sm flex items-center" onClick={handlePreviousStep}>
+                <button type="button" className="text-gray-800 dark:text-gray-200 text-sm flex items-center" onClick={handlePreviousStep}>
                     <ArrowNarrowLeftIcon className="w-4 h-4 mr-2" /> Back
                 </button>
             )}

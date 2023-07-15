@@ -1,6 +1,8 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { PopupModal, useCalendlyEventListener } from 'react-calendly';
 import * as Yup from 'yup';
+import EventDetails from '../components/EventDetails';
 import { countries, industries, job_titles } from '../components/forms/data';
 import FormControl from '../components/forms/FormControl';
 import FormikAutoComplete from '../components/forms/FormikAutoComplete';
@@ -10,6 +12,7 @@ import FormStep from '../components/forms/FormStep';
 import MultiStepForm from '../components/forms/MultiStepForm';
 import { inputClassName } from '../components/forms/styles.constant';
 import Navbar from '../components/navbar';
+import ScheduleCallStep from '../components/ScheduleCallStep';
 
 const personalInfoSchema = Yup.object({
     firstName: Yup.string().required('First Name is required'),
@@ -31,6 +34,23 @@ const projectInfoSchema = Yup.object({
 
 
 const BookSession = () => {
+    const [eventDetails, setEventDetails] = useState([])
+    const [snapshot, setSnapShot] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        website: '',
+        industry: '',
+        region: '',
+        employee_count: '',
+        job_title: '',
+        project_budget: '',
+        about: '',
+    })
+
+
+
     const onSubmit = (values, helpers) => {
         // Handle form submission
         console.log(values);
@@ -52,19 +72,8 @@ const BookSession = () => {
             </h1>
 
             <MultiStepForm
-                initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    company: '',
-                    website: '',
-                    industry: '',
-                    region: '',
-                    employee_count: '',
-                    job_title: '',
-                    project_budget: '',
-                    about: '',
-                }}
+                snapshot={snapshot}
+                setSnapShot={setSnapShot}
                 onSubmit={onSubmit}>
 
                 <FormStep
@@ -121,6 +130,7 @@ const BookSession = () => {
                     </FormControl>
                 </FormStep>
 
+                <ScheduleCallStep eventDetails={eventDetails} setEventDetails={setEventDetails} snapshot={snapshot} />
             </MultiStepForm>
         </div>
     );

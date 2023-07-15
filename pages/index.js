@@ -2,7 +2,6 @@ import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
-
 import Benefits from "../components/benefits";
 import Cta from "../components/cta";
 import { benefitOne, features } from "../components/data";
