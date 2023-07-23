@@ -1,9 +1,12 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
+import { ArrowLeftIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/dist/client/router";
 
 export default function Navbar() {
-  const navigation = ["Our Vision", "Manage App Development", "Enterprise", "Solution", "Our Team"];
+  const navigation = ["Our Vision", "Manage App Development", "Solution"];
+  const router = useRouter()
 
   return (
     <div className="w-full">
@@ -15,6 +18,8 @@ export default function Navbar() {
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
                   <a className="flex items-center space-x-2 text-2xl font-medium text-blue-500">
+                    {router.pathname !== "/" && <ArrowLeftIcon className="text-blue-500 w-5 h-5" />}
+
                     <span>AntBuilder</span>
                   </a>
                 </Link>
@@ -25,7 +30,8 @@ export default function Navbar() {
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700 relative z-20">
+                  className={`px-2 py-1 text-gray-500 rounded-md lg:hidden hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700 z-20 
+                  ${open ? "fixed right-4" : "relative "}`}>
                   <svg
                     className="w-6 h-6 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +61,7 @@ export default function Navbar() {
                         </a>
                       </Link>
                     ))}
+                    <GetStartedLink />
                   </>
                 </Disclosure.Panel>
               </div>
@@ -62,9 +69,14 @@ export default function Navbar() {
           )}
         </Disclosure>
 
+
         {/* menu  */}
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+            {/*Theme switch */}
+            <div className="hidden mr-3 space-x-3 lg:flex nav__item">
+              <ThemeChanger />
+            </div>
             {navigation.map((menu, index) => (
               <li className="mr-3 nav__item" key={index}>
                 <Link href="/">
@@ -74,13 +86,26 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <GetStartedLink />
+            </li>
           </ul>
-        </div>
-
-        <div className="hidden mr-3 space-x-3 lg:flex nav__item">
-          <ThemeChanger />
         </div>
       </nav>
     </div>
   );
+}
+
+
+const GetStartedLink = () => {
+  return (
+    <Link
+      href="/book_session"
+      passHref>
+      <a className="px-4 py-2.5 text- font-medium text-center w-max inline-flex items-center text-white bg-blue-500 rounded-xl ">
+        Get Started
+      </a>
+
+    </Link>
+  )
 }

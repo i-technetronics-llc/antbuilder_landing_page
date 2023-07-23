@@ -19,12 +19,12 @@ const personalInfoSchema = Yup.object({
 });
 
 const projectInfoSchema = Yup.object({
-    company: Yup.string().required('Company Name is required'),
-    website: Yup.string().url('Invalid URL').required('Website URL is required'),
-    industry: Yup.string().required('Industry is required'),
-    region: Yup.string().required('Country Region is required'),
-    employee_count: Yup.number().integer('Employee Count must be an integer').required('Employee Count is required'),
-    job_title: Yup.string().required('Job Title is required'),
+    company: Yup.string(),
+    website: Yup.string().url('Invalid URL'),
+    industry: Yup.string(),
+    region: Yup.string(),
+    employee_count: Yup.number().integer('Employee Count must be an integer'),
+    job_title: Yup.string(),
     project_budget: Yup.number().positive('Project Budget must be a positive number').required('Project Budget is required'),
     about: Yup.string().required('About is required'),
 });

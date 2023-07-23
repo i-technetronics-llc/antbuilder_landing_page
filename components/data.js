@@ -59,7 +59,7 @@ const features = [
     icon: <ClockIcon /> // Example icon component for the second feature
   },
   {
-    title: "Faster, Cheaper Smarter, Better",
+    title: "Faster, Cheaper, Smarter, Better",
     desc: "Interact with true experts who will help you develop the best of the best apps based on your business requirements, as well as establish a dedicated delivery and go-to-market roadmap for your product.",
     icon: <LightningBoltIcon /> // Example icon component for the third feature
   },

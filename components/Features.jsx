@@ -4,7 +4,7 @@ import Container from './container'
 
 const Features = ({ data }) => {
     return (
-        <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 mb-28 gap-10">
+        <Container className="grid grid-cols-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-3 mt-12 mb-28 gap-10">
             {data.map((feature, index) => (
                 <Feature key={index} {...feature} />
             ))}

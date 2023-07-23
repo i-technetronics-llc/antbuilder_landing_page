@@ -3,12 +3,14 @@ import Container from "./container";
 import heroImg from "../public/img/hero.svg";
 import { ArrowNarrowRightIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import Link from "next/link"
+import Navbar from "./navbar";
 
 export default function Hero() {
   return (
-    <>
-      <Container className="flex flex-wrap lg:mb-20 mt-5 lg:mt-0">
-        <div className="flex items-center w-full lg:w-1/2">
+    <header className="h-screen flex flex-col">
+      <Navbar />
+      <Container className="flex grow flex-wrap h-full lg:mt-0">
+        <div className="flex items-center w-full lg:w-1/2 h-full">
           <div className="max-w-xl mb-12 text-center lg:text-left">
             <h1 className="text-4xl font-normal leading-snug capitalize tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight dark:text-white">
               A Faster and better way to build apps
@@ -16,7 +18,7 @@ export default function Hero() {
 
             <div className="py-8 text-base leading-normal text-gray-600 lg:text-xl  dark:text-gray-300 space-y-7">
               <p>
-                Launch 5X faster and 2X cheaper, will Testable Apps every 2 weeks  with our data-driven app development platform.
+                Launch 5X faster and 2X cheaper, with testable features every 2 weeks  with our data-driven app development platform.
               </p>
 
               <ul className="text-sm list flex lg:flex-col items-start flex-wrap justify-center content-between gap-2">
@@ -64,7 +66,7 @@ export default function Hero() {
           </div>
         </div>
       </Container>
-    </>
+    </header>
   );
 }
 

@@ -1,14 +1,13 @@
 import Head from "next/head";
-import Hero from "../components/hero";
-import Navbar from "../components/navbar";
-import SectionTitle from "../components/sectionTitle";
 import Benefits from "../components/benefits";
 import Cta from "../components/cta";
 import { benefitOne, features } from "../components/data";
 import Faq from "../components/faq";
 import Features from "../components/Features";
 import Footer from "../components/footer";
+import Hero from "../components/hero";
 import PricingSection from "../components/PricingSection";
+import SectionTitle from "../components/sectionTitle";
 
 
 export default function Home() {
@@ -23,19 +22,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
       <Hero />
 
-      <SectionTitle
-        pretitle="Develop from pre-existing modules"
-        title=" That are exclusively available to you" />
-      <Features data={features} />
+      <section className="lg:py-10">
+        <SectionTitle
+          pretitle="Develop from pre-existing modules"
+          title=" That are exclusively available to you" />
+        <Features data={features} />
+      </section>
 
+      <section className="lg:py-10">
+        <SectionTitle
+          pretitle="Antbuilder Benefits"
+          title="Unleash the Power of Iterative App Development with Antbuilder" />
+        <Benefits data={benefitOne} />
+      </section>
 
-      <SectionTitle
-        pretitle="Antbuilder Benefits"
-        title="Unleash the Power of Iterative App Development with Antbuilder" />
-      <Benefits data={benefitOne} />
 
 
       <SectionTitle
