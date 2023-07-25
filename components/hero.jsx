@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.svg";
+import heroImg2 from "../public/img/hero_1.svg";
+import heroImg3 from "../public/img/hero_2.svg";
 import { ArrowNarrowRightIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import Link from "next/link"
 import Navbar from "./navbar";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, EffectFade } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 export default function Hero() {
   return (
@@ -53,20 +60,54 @@ export default function Hero() {
 
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
+        <div className="lg:w-1/2">
           <div className="hidden lg:block">
-            <Image
-              src={heroImg}
-              width="616"
-              height="617"
-              alt="Hero Illustration"
-              layout="intrinsic"
-              loading="eager"
-            />
+            <Swiper
+              spaceBetween={20}
+              effect={"fade"}
+              slidesPerView={1}
+              centeredSlides={true}
+              loop={true}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+
+              modules={[Autoplay, EffectFade]}
+            >
+              <SwiperSlide>
+                <SliderImage imageUrl={heroImg} alt="Hero Illustration 1" />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <SliderImage imageUrl={heroImg2} alt="Hero Illustration 2" />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <SliderImage imageUrl={heroImg3} alt="Hero Illustration 3" />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </Container>
     </header>
   );
+}
+
+
+export const SliderImage = ({ imageUrl, alt }) => {
+  return (
+    <Image
+      src={imageUrl}
+      width="616"
+      height="617"
+      alt={alt}
+      layout="intrinsic"
+      loading="eager"
+    />
+  )
 }
 

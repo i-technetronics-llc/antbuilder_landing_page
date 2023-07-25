@@ -10,6 +10,7 @@ import PricingSection from "../components/PricingSection";
 import SectionTitle from "../components/sectionTitle";
 
 
+
 export default function Home() {
   return (
     <>

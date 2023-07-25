@@ -13,6 +13,7 @@ import { inputClassName } from '../components/forms/styles.constant';
 import Navbar from '../components/navbar';
 import ScheduleCallStep from '../components/ScheduleCallStep';
 
+
 const personalInfoSchema = Yup.object({
     firstName: Yup.string().required('First Name is required'),
     lastName: Yup.string().required('Last Name is required'),
@@ -21,7 +22,9 @@ const personalInfoSchema = Yup.object({
 
 const projectInfoSchema = Yup.object({
     company: Yup.string(),
-    website: Yup.string().test('custom-url-validation', 'Invalid URL', value => {
+    website: Yup.string().notRequired().test('custom-url-validation', 'Invalid URL', value => {
+        if (!value) return true
+
         const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9_-]+)*\/?$/;
         return urlRegex.test(value);
     }),
