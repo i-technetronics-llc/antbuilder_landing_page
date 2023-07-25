@@ -1,16 +1,17 @@
+import { ArrowNarrowRightIcon, CheckCircleIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import Container from "./container";
+import Link from "next/link";
 import heroImg from "../public/img/hero.svg";
 import heroImg2 from "../public/img/hero_1.svg";
 import heroImg3 from "../public/img/hero_2.svg";
-import { ArrowNarrowRightIcon, CheckCircleIcon } from "@heroicons/react/solid";
-import Link from "next/link"
+import Container from "./container";
 import Navbar from "./navbar";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { Autoplay, EffectFade } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 export default function Hero() {
   return (
@@ -69,7 +70,7 @@ export default function Hero() {
               centeredSlides={true}
               loop={true}
               autoplay={{
-                delay: 2000,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
@@ -83,12 +84,25 @@ export default function Hero() {
               </SwiperSlide>
 
               <SwiperSlide>
-                <SliderImage imageUrl={heroImg2} alt="Hero Illustration 2" />
+                <SliderImage imageUrl={heroImg3} alt="Hero Illustration 3" />
               </SwiperSlide>
 
               <SwiperSlide>
-                <SliderImage imageUrl={heroImg3} alt="Hero Illustration 3" />
+                <SliderImage imageUrl={heroImg2} alt="Hero Illustration 2" />
               </SwiperSlide>
+
+              {/* <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </SwiperSlide> */}
             </Swiper>
           </div>
         </div>
@@ -100,14 +114,16 @@ export default function Hero() {
 
 export const SliderImage = ({ imageUrl, alt }) => {
   return (
-    <Image
-      src={imageUrl}
-      width="616"
-      height="617"
-      alt={alt}
-      layout="intrinsic"
-      loading="eager"
-    />
+    <figure className="w-full h-full bg-white">
+      <Image
+        src={imageUrl}
+        width={616}
+        height={617}
+        alt={alt}
+        layout="intrinsic"
+        loading="eager"
+      />
+    </figure>
   )
 }
 
