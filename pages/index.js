@@ -24,14 +24,14 @@ export default function Home() {
 
       <Hero />
 
-      <section className="lg:py-10">
+      <section className="lg:h-screen">
         <SectionTitle
           pretitle="Develop from pre-existing modules"
           title=" That are exclusively available to you" />
         <Features data={features} />
       </section>
 
-      <section className="lg:py-10">
+      <section className="lg:h-screen">
         <SectionTitle
           pretitle="Antbuilder Benefits"
           title="Unleash the Power of Iterative App Development with Antbuilder" />

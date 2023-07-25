@@ -3,9 +3,14 @@ import ThemeChanger from "./DarkSwitch";
 import { Disclosure } from "@headlessui/react";
 import { ArrowLeftIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/dist/client/router";
+import Logo from "./Logo";
 
 export default function Navbar() {
-  const navigation = ["Our Vision", "Manage App Development", "Solution"];
+  const navigation = [
+    { value: "Our Vision", href: "/vision" },
+    { value: "Solution", href: "#" },
+  ];
+
   const router = useRouter()
 
   return (
@@ -16,13 +21,10 @@ export default function Navbar() {
           {({ open }) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
-                <Link href="/">
-                  <a className="flex items-center space-x-2 text-2xl font-medium text-blue-500">
-                    {router.pathname !== "/" && <ArrowLeftIcon className="text-blue-500 w-5 h-5" />}
-
-                    <span>AntBuilder</span>
-                  </a>
-                </Link>
+                <div className="flex items-center space-x-2">
+                  {router.pathname !== "/" && <ArrowLeftIcon className="text-blue-500 w-5 h-5" />}
+                  <Logo />
+                </div>
 
                 <div className="space-x-3 flex lg:hidden">
                   <ThemeChanger />
@@ -54,10 +56,10 @@ export default function Navbar() {
 
                 <Disclosure.Panel className={`flex flex-col items-center justify-center lg:hidden bg-white dark:bg-gray-500 fixed z-10 top-0 left-0 w-screen h-screen transition-all duration-500`}>
                   <>
-                    {navigation.map((item, index) => (
-                      <Link key={index} href="/">
+                    {navigation.map(({ value, href }, index) => (
+                      <Link key={index} href={href}>
                         <a className="px-4 py-2 -ml-4 text-gray-800 rounded-md dark:text-gray-300 hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
-                          {item}
+                          {value}
                         </a>
                       </Link>
                     ))}
@@ -77,11 +79,11 @@ export default function Navbar() {
             <div className="hidden mr-3 space-x-3 lg:flex nav__item">
               <ThemeChanger />
             </div>
-            {navigation.map((menu, index) => (
+            {navigation.map(({ value, href }, index) => (
               <li className="mr-3 nav__item" key={index}>
-                <Link href="/">
+                <Link href={href}>
                   <a className="inline-block px-4 py-2 text-base font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none">
-                    {menu}
+                    {value}
                   </a>
                 </Link>
               </li>
