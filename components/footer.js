@@ -3,12 +3,21 @@ import React from "react";
 import Container from "./container";
 
 export default function Footer() {
-  const navigation = ["Features", "Pricing",];
-  const legal = ["Terms", "Privacy"];
+
+  const navigation = [
+    { href: "/vision", value: "Our Vision" },
+    { href: "/", value: "Solution" },
+  ];
+
+  const legal = [
+    { href: "#", value: "Terms" },
+    { href: "/privacy_policy", value: "Privacy" },
+  ];
+
   return (
     <div className="relative">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
+        <div className="flex items-center justify-between max-w-screen-xl pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700">
           <div className="lg:col-span-2">
             <div>
               {" "}
@@ -26,10 +35,11 @@ export default function Footer() {
 
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
+              <p className="px-4">Company</p>
               {navigation.map((item, index) => (
-                <Link key={index} href="/">
+                <Link key={index} href={item.href}>
                   <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-blue-500 focus:text-blue-500 focus:bg-blue-100 focus:outline-none dark:focus:bg-trueGray-700">
-                    {item}
+                    {item.value}
                   </a>
                 </Link>
               ))}
@@ -37,10 +47,11 @@ export default function Footer() {
           </div>
           <div>
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
+              <p className="px-4">Legal</p>
               {legal.map((item, index) => (
-                <Link key={index} href="/">
+                <Link key={index} href={item.href}>
                   <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
-                    {item}
+                    {item.value}
                   </a>
                 </Link>
               ))}

@@ -6,6 +6,7 @@ import FormControl from '../components/forms/FormControl';
 import FormikAutoComplete from '../components/forms/FormikAutoComplete';
 import FormikInput from '../components/forms/FormikInput';
 import FormikTextarea from '../components/forms/FormikTextarea';
+import FormikUrlInput from '../components/forms/FormikUrlInput';
 import FormStep from '../components/forms/FormStep';
 import MultiStepForm from '../components/forms/MultiStepForm';
 import { inputClassName } from '../components/forms/styles.constant';
@@ -20,7 +21,10 @@ const personalInfoSchema = Yup.object({
 
 const projectInfoSchema = Yup.object({
     company: Yup.string(),
-    website: Yup.string().url('Invalid URL'),
+    website: Yup.string().test('custom-url-validation', 'Invalid URL', value => {
+        const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9_-]+)*\/?$/;
+        return urlRegex.test(value);
+    }),
     industry: Yup.string(),
     region: Yup.string(),
     employee_count: Yup.number().integer('Employee Count must be an integer'),
@@ -100,7 +104,7 @@ const BookSession = () => {
                     </FormControl>
 
                     <FormControl label="Website Url" labelId="website">
-                        <FormikInput type="url" name="website" id="website" className={inputClassName} />
+                        <FormikUrlInput name="website" id="website" className={inputClassName} />
                     </FormControl>
 
                     <FormControl label="Industry" labelId="industry">

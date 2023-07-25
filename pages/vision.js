@@ -3,6 +3,7 @@ import Navbar from '../components/navbar';
 import Head from 'next/head';
 import Container from '../components/container';
 import Logo from '../components/Logo';
+import HeaderContentSection from '../components/HeaderContent';
 
 const values = [
     {
@@ -47,17 +48,17 @@ const Vision = () => {
             <Navbar />
 
             <Container className="space-y-16 my-10">
-                <VisionSection header="Our Vision">
+                <HeaderContentSection header="Our Vision">
                     <p className='dark:text-gray-300'>our vision is to build softwares fast, efficiently, in an iterative manner and collaborative with the help of the every body needed to achieve results as fast as possible and sticking with the change in the technology space, we do this because want want to help business scale fast, develop novelty solutions or solve a unique business problem. our vision is if you can dream it we can build it.</p>
-                </VisionSection>
+                </HeaderContentSection>
 
-                <VisionSection header="Our Mission">
+                <HeaderContentSection header="Our Mission">
                     <p className='dark:text-gray-300'>
                         Our mission is to rapidly deliver efficient software solutions through collaborative iteration, leveraging cutting-edge technology. We empower businesses to scale, innovate, and overcome unique challenges. With our expertise, we transform your dreams into reality.
                     </p>
-                </VisionSection>
+                </HeaderContentSection>
 
-                <VisionSection header="Core Values">
+                <HeaderContentSection header="Core Values">
                     <dl className="space-y-4">
                         {values.map((value, index) => (
                             <div key={index}>
@@ -66,7 +67,7 @@ const Vision = () => {
                             </div>
                         ))}
                     </dl>
-                </VisionSection>
+                </HeaderContentSection>
             </Container>
 
             <footer className="flex items-center justify-center py-4 bg-blue-500">
@@ -77,13 +78,3 @@ const Vision = () => {
 };
 
 export default Vision;
-
-const VisionSection = ({ header, children }) => {
-    return (
-        <section className='space-y-4'>
-            <h2 className='text-4xl text-gray-700 dark:text-gray-200'>{header}</h2>
-            {children}
-        </section>
-    );
-};
-

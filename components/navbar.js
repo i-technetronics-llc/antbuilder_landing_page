@@ -1,8 +1,7 @@
+import { Disclosure } from "@headlessui/react";
+import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import { Disclosure } from "@headlessui/react";
-import { ArrowLeftIcon } from "@heroicons/react/solid";
-import { useRouter } from "next/dist/client/router";
 import Logo from "./Logo";
 
 export default function Navbar() {
@@ -22,8 +21,8 @@ export default function Navbar() {
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <div className="flex items-center space-x-2">
-                  {router.pathname !== "/" && <ArrowLeftIcon className="text-blue-500 w-5 h-5" />}
-                  <Logo />
+
+                  <Logo withBackArrow={router.pathname !== "/"} />
                 </div>
 
                 <div className="space-x-3 flex lg:hidden">
