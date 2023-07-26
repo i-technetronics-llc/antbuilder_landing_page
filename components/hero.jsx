@@ -114,7 +114,7 @@ export default function Hero() {
 
 export const SliderImage = ({ imageUrl, alt }) => {
   return (
-    <figure className="w-full h-full bg-white">
+    <figure className="w-full h-full bg-white dark:bg-trueGray-900">
       <Image
         src={imageUrl}
         width={616}

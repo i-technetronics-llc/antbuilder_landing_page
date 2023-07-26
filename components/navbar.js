@@ -21,7 +21,6 @@ export default function Navbar() {
             <>
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <div className="flex items-center space-x-2">
-
                   <Logo withBackArrow={router.pathname !== "/"} />
                 </div>
 
@@ -75,9 +74,9 @@ export default function Navbar() {
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {/*Theme switch */}
-            <div className="hidden mr-3 space-x-3 lg:flex nav__item">
+            <li className="hidden mr-3 space-x-3 lg:flex nav__item">
               <ThemeChanger />
-            </div>
+            </li>
             {navigation.map(({ value, href }, index) => (
               <li className="mr-3 nav__item" key={index}>
                 <Link href={href}>
