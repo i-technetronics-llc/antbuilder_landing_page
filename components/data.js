@@ -27,6 +27,7 @@ const benefitOne = {
   ],
 };
 
+
 const benefitTwo = {
   title: "Offer more benefits here",
   desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
@@ -73,6 +74,7 @@ const features = [
     icon: <AcademicCapIcon /> // Example icon component for the first feature
   },
 ];
+
 
 const values = [
   {
@@ -131,7 +133,24 @@ const businessPackages = [
   }
 ];
 
+
+const pricingData = {
+  excerpt: `
+  Our development cost is $53 per hour. To initiate the project, a 50% down payment is required ( negotiable) . The remaining 50% will be spread over the development cycle, with an additional 40 hours covered by us, focused on App launch preparation and post-launch support. Additionally, you'll receive 10 hours of post-development support credits to address any critical issues that may arise.`,
+  content: `
+  Our development cost is $53 per hour, with a 50% down payment to initiate the project. The remaining 50% is spread over the development cycle, allowing you to manage payments with ease. With our flexible financing model, you can opt for monthly invoicing, making it convenient to handle ongoing changes and updates to the scope of work.
+
+  Our monthly invoicing structure ensures that you have a set amount to pay each month, providing the freedom to make as many changes to the app as necessary. Any additional costs incurred during the development process will be rolled over to the following month, ensuring a smooth and transparent payment process.
+  
+  In the last quarter of development, our dedicated team will prepare all materials necessary for the successful launch of your app. We cover these materials, including promotional materials, marketing plans, social media plans, and all associated graphics works, up to a total of 40 hours. This ensures a seamless and impactful app launch, with our team taking care of all pre-launch and post-launch materials.
+  
+  With our pricing structure, you can confidently embark on your app development journey, knowing that we provide a comprehensive and inclusive package to support your success from start to finish. Let us help you bring your app vision to life with ease and excellence!
+  `,
+
+  packages: businessPackages
+}
+
 // You can access the packages using businessPackage[0], businessPackage[1], etc.
 
 
-export { benefitOne, benefitTwo, features, values, businessPackages };
+export { benefitOne, benefitTwo, features, values, pricingData };

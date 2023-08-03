@@ -41,11 +41,13 @@ export default function Home() {
 
 
 
-      <SectionTitle
+      {/* <SectionTitle
         title="Designed for business teams like yours" >
         Here at Antbuilder, we have have the perfect pricing model for your business.
-      </SectionTitle>
+      </SectionTitle> */}
 
+      <SectionTitle
+        title="Our Pricing Model" />
       <PricingSection />
 
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">

@@ -18,7 +18,7 @@ export default function Hero() {
     <header className="h-screen flex flex-col">
       <Navbar />
       <Container className="flex grow flex-wrap h-full lg:mt-0">
-        <div className="flex items-center w-full lg:w-1/2 h-full">
+        <div className="flex items-center justify-center w-full lg:w-1/2 h-full">
           <div className="max-w-xl mb-12 text-center lg:text-left">
             <h1 className="text-4xl font-normal leading-snug capitalize tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight dark:text-white">
               A Faster and better way to build apps
