@@ -1,7 +1,7 @@
 import { ErrorMessage, useField } from "formik";
 
 const FormikUrlInput = ({ placeholder, name, className, ...props }) => {
-    const [field, meta, helper] = useField({ name, type: "url" })
+    const [field, meta] = useField({ name, type: "url" })
 
     return (
         <>
@@ -10,7 +10,7 @@ const FormikUrlInput = ({ placeholder, name, className, ...props }) => {
             </ErrorMessage>
             <div>
                 <input
-                    type={"url"}
+                    type={"text"}
                     placeholder={placeholder ? placeholder : ""}
                     className={`${meta.error && meta.touched ? "ring-1 ring-red-600" : ""} ${className}`}
                     {...props}

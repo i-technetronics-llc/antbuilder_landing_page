@@ -25,14 +25,14 @@ export default function Home() {
 
       <Hero />
 
-      <section className="lg:h-screen">
+      <section className="lg:h-screen lg:flex flex-col justify-center items-center">
         <SectionTitle
           pretitle="Develop from pre-existing modules"
           title=" That are exclusively available to you" />
         <Features data={features} />
       </section>
 
-      <section className="lg:h-screen">
+      <section className="lg:h-screen lg:flex flex-col justify-center items-center">
         <SectionTitle
           pretitle="Antbuilder Benefits"
           title="Unleash the Power of Iterative App Development with Antbuilder" />
