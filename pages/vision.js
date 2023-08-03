@@ -1,14 +1,13 @@
-import React from 'react';
-import Navbar from '../components/navbar';
 import Head from 'next/head';
+import Image from "next/image";
+import React from 'react';
 import Container from '../components/container';
-import Logo from '../components/Logo';
-import HeaderContentSection from '../components/HeaderContent';
-import Features from "../components/Features";
 import { values } from '../components/data';
-import Image from "next/image"
-import VisionIllustration from "../public/img/vision.svg"
-import MissionIllustration from "../public/img/mission.svg"
+import Features from "../components/Features";
+import Logo from '../components/Logo';
+import Navbar from '../components/navbar';
+import MissionIllustration from "../public/img/mission.svg";
+import VisionIllustration from "../public/img/vision.svg";
 
 
 const Vision = () => {
@@ -41,7 +40,7 @@ const Vision = () => {
 
             </header>
 
-            <Container className="space-y-28 lg:space-y-36 my-20">
+            <Container className="space-y-28 lg:space-y-36 my-28">
                 <section className='flex flex-col lg:flex-row items-center'>
                     <figure className=' mb-8 lg:mb-0'>
                         <Image src={MissionIllustration} />

@@ -1,5 +1,7 @@
 import React from 'react';
+import BusinessPackage from './BusinessPackage';
 import Container from './container';
+import { businessPackages } from './data';
 import PricingCard from './PricingCard';
 
 const PricingSection = () => {
@@ -8,7 +10,7 @@ const PricingSection = () => {
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
 
                 <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-                    <PricingCard
+                    {/* <PricingCard
                         title="Starter"
                         description="Best option for personal use & for your next project."
                         price="$29"
@@ -31,7 +33,18 @@ const PricingSection = () => {
                         teamSize="100+ developers"
                         supportDuration="36 months"
                         updatesDuration="36 months"
-                    />
+                    /> */}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-9 justify-center">
+                    {businessPackages.map((businessPackage) => {
+                        return (
+                            <BusinessPackage
+                                key={businessPackage.id}
+                                hours={businessPackage.hours}
+                                description={businessPackage.description} />
+                        )
+                    })}
                 </div>
             </div>
         </Container>

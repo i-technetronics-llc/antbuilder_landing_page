@@ -10,6 +10,10 @@ module.exports = {
       colors: {
         trueGray: colors.trueGray,
       },
+      gridTemplateColumns: {
+        'dynamic-250': 'repeat(auto-fit, minmax(250px, 1fr))',
+        'dynamic-193': 'repeat(auto-fit, minmax(193px, 1fr))',
+      },
     },
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
@@ -17,7 +21,8 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };

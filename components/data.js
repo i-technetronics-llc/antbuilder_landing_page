@@ -107,4 +107,31 @@ const values = [
   },
 ]
 
-export { benefitOne, benefitTwo, features, values };
+
+const businessPackages = [
+  {
+    id: 1,
+    hours: 40,
+    description: "Enhance your social media presence with 40 hours of dedicated expert time. Engage your audience, schedule posts strategically, and boost your app's visibility."
+  },
+  {
+    id: 2,
+    hours: 80,
+    description: "Double the impact with 80 hours of focused efforts. Our team will craft compelling content, analyze performance, and optimize your social media strategy for maximum results. This includes services from all the other previous packages."
+  },
+  {
+    id: 3,
+    hours: 120,
+    description: "Elevate your brand with 120 hours of expert attention. From creating engaging visuals to running targeted campaigns, we ensure your app reaches the right audience at the right time. This includes services from all the other previous packages."
+  },
+  {
+    id: 4,
+    hours: 160,
+    description: "Dominate the social media landscape with 160 hours of comprehensive support. We handle every aspect of your social media strategy, leaving you free to focus on app excellence. This includes services from all the other previous packages."
+  }
+];
+
+// You can access the packages using businessPackage[0], businessPackage[1], etc.
+
+
+export { benefitOne, benefitTwo, features, values, businessPackages };
