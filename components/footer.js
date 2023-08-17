@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import AppConfig from "../AppConfig";
 import Container from "./container";
 
 export default function Footer() {
@@ -61,15 +62,16 @@ export default function Footer() {
 
           <div>
             <div>Follow us</div>
-            <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
+            <div className="flex mt-5 space-x-5 text-gray-700 dark:text-gray-500">
               <a
-                href="https://twitter.com/moon_cypher"
+                className="dark:text-trueGray-900 -mt-1"
+                href={AppConfig.social.twitter}
                 target="_blank"
                 rel="noopener">
                 <span className="sr-only">Twitter</span>
-                <Twitter />
+                <Twitter size={32} />
               </a>
-              <a
+              {/* <a
                 href="#"
                 target="_blank"
                 rel="noopener">
@@ -82,8 +84,8 @@ export default function Footer() {
                 rel="noopener">
                 <span className="sr-only">Instagram</span>
                 <Instagram />
-              </a>
-              <a href="https://linkedin.com/" target="_blank" rel="noopener">
+              </a> */}
+              <a href={AppConfig.social.linkedin} target="_blank" rel="noopener">
                 <span className="sr-only">Linkedin</span>
                 <Linkedin />
               </a>
@@ -101,11 +103,12 @@ export default function Footer() {
 const Twitter = ({ size = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 48 48"
     width={size}
     height={size}
-    viewBox="0 0 24 24"
-    fill="currentColor">
-    <path d="M24 4.37a9.6 9.6 0 0 1-2.83.8 5.04 5.04 0 0 0 2.17-2.8c-.95.58-2 1-3.13 1.22A4.86 4.86 0 0 0 16.61 2a4.99 4.99 0 0 0-4.79 6.2A13.87 13.87 0 0 1 1.67 2.92 5.12 5.12 0 0 0 3.2 9.67a4.82 4.82 0 0 1-2.23-.64v.07c0 2.44 1.7 4.48 3.95 4.95a4.84 4.84 0 0 1-2.22.08c.63 2.01 2.45 3.47 4.6 3.51A9.72 9.72 0 0 1 0 19.74 13.68 13.68 0 0 0 7.55 22c9.06 0 14-7.7 14-14.37v-.65c.96-.71 1.79-1.6 2.45-2.61z" />
+    fill="currentColor"
+    baseProfile="basic">
+    <path d="M38,42H10c-2.209,0-4-1.791-4-4V10c0-2.209,1.791-4,4-4h28	c2.209,0,4,1.791,4,4v28C42,40.209,40.209,42,38,42z" /><path fill="#fff" d="M34.257,34h-6.437L13.829,14h6.437L34.257,34z M28.587,32.304h2.563L19.499,15.696h-2.563 L28.587,32.304z" /><polygon fill="#fff" points="15.866,34 23.069,25.656 22.127,24.407 13.823,34" /><polygon fill="#fff" points="24.45,21.721 25.355,23.01 33.136,14 31.136,14" />
   </svg>
 );
 

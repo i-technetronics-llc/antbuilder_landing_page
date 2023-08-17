@@ -30,7 +30,7 @@ export default function Navbar({ inverse = false }) {
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
-                  className={`px-2 py-1 transition-all duration-300 ${inverse ? "text-white" : "text-gray-500"} rounded-md lg:hidden hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700 z-20 
+                  className={`px-2 py-1 transition-all duration-300 ${inverse ? "text-white" : "text-gray-500 hover:text-blue-500 focus:text-blue-500"} rounded-md lg:hidden  focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700 z-20 
                   ${open ? "fixed right-4" : "relative "}`}>
                   <svg
                     className="w-6 h-6 fill-current"
@@ -80,7 +80,7 @@ export default function Navbar({ inverse = false }) {
             {navigation.map(({ value, href }, index) => (
               <li className="mr-3 nav__item" key={index}>
                 <Link href={href}>
-                  <a className={`inline-block px-4 py-2 text-base font-normal ${inverse ? "text-white" : "text-gray-800"} no-underline rounded-md dark:text-gray-200 hover:text-blue-500 focus:text-blue-500 focus:bg-indigo-100 focus:outline-none`}>
+                  <a className={`inline-block px-4 py-2 text-base font-normal ${inverse ? "text-white font-bold" : "text-gray-800 hover:text-blue-500 focus:text-blue-500"} no-underline rounded-md dark:text-gray-200  focus:bg-indigo-100 focus:outline-none`}>
                     {value}
                   </a>
                 </Link>

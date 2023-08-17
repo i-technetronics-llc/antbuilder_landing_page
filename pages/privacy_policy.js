@@ -16,9 +16,13 @@ const PrivacyPolicy = () => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
 
-            <Container className="space-y-16 my-10">
+            <div className='max-w-6xl mx-auto'>
+                <Navbar />
+            </div>
+
+
+            <div className="space-y-16 my-10 w-full max-w-6xl mx-auto">
                 <section className='space-y-2'>
                     <h1 className='text-5xl text-gray-700 dark:text-gray-200'>Privacy Policy</h1>
                     <p className='dark:text-gray-300'>This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.</p>
@@ -106,7 +110,7 @@ const PrivacyPolicy = () => {
                         <li>We do not specifically market to children under the age of 13 years old. We do not let third-parties, including ad networks or plug-ins, collect PII from children under 13.</li>
                     </ul>
                 </HeaderContentSection>
-            </Container>
+            </div>
 
             <footer className="flex items-center justify-center py-4 bg-blue-500">
                 <Logo className='!text-white' />
